@@ -240,7 +240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041165413655870640, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 2123.35
+      value: 2010.305
       objectReference: {fileID: 0}
     - target: {fileID: 9041165413655870640, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -276,7 +276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041165413655870640, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -78.975
+      value: -135.497
       objectReference: {fileID: 0}
     - target: {fileID: 9041165413655870640, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -292,30 +292,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041165413655870641, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
       propertyPath: m_text
-      value: 'To convert binary to decimal, you need to start from the rightmost
-        digit of the binary number and multiply it by 2 to the power of 0, which
-        is 1. Then, you move to the left and for each digit, you multiply it by 2
-        to the power of its position, where the rightmost position is 0, the next
-        one is 1, and so on. You add up all the resulting products to get the decimal
-        equivalent of the binary number.
+      value: 'To convert a decimal number to binary, you can use a process of repeated
+        division by two. Start with the decimal number and divide it by two. Record
+        the quotient and the remainder. Divide the quotient by two and record the
+        quotient and remainder again. Repeat this process until the quotient becomes
+        zero. The binary equivalent of the decimal number is the sequence of remainders
+        read in reverse order.
 
 
-        For example, to convert the binary
-        number 1101 to decimal, you would start from the rightmost digit which is
-        1 and multiply it by 2^0, which is 1, so you get 1 x 1 = 1. Then, you move
-        to the left and the next digit is 0, so you don''t add anything to the sum.
-        The next digit is 1, so you multiply it by 2^2, which is 4, so you get 1
-        x 4 = 4. Finally, the leftmost digit is 1, so you multiply it by 2^3, which
-        is 8, so you get 1 x 8 = 8.
 
-
-        You add up all the resulting products,
-        which are 1 + 0 + 4 + 8, and you get 13, so the decimal equivalent of the
-        binary number 1101 is 13.'
+        For example, to convert the decimal number
+        13 to binary, divide 13 by 2. The quotient is 6 and the remainder is 1. Next,
+        divide 6 by 2. The quotient is 3 and the remainder is 0. Divide 3 by 2. The
+        quotient is 1 and the remainder is 1. Divide 1 by 2. The quotient is 0 and
+        the remainder is 1. Reading the remainders in reverse order, the binary equivalent
+        of the decimal number 13 is 1101. Therefore, 13 in binary is 1101.'
       objectReference: {fileID: 0}
     - target: {fileID: 9041165413655870641, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
       propertyPath: m_fontSize
-      value: 68.75
+      value: 72.9
       objectReference: {fileID: 0}
     - target: {fileID: 9041165413655870641, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
       propertyPath: m_margin.w
@@ -335,7 +330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041165413655870641, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
       propertyPath: m_VerticalAlignment
-      value: 512
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 9041165413655870641, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
       propertyPath: m_HorizontalAlignment
@@ -343,7 +338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041165413655870643, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
       propertyPath: m_Name
-      value: Text (1)
+      value: Tutorial Text
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
@@ -369,7 +364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4028004603161818901, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_Name
-      value: Button
+      value: Previous Button
       objectReference: {fileID: 0}
     - target: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_Pivot.x
@@ -401,11 +396,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 5297.341
+      value: 5355.688
       objectReference: {fileID: 0}
     - target: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 888.307
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -437,7 +432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1450
+      value: -1442.7065
       objectReference: {fileID: 0}
     - target: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -474,7 +469,7 @@ GameObject:
   - component: {fileID: 712374970}
   - component: {fileID: 712374969}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Tutorial Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -497,8 +492,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 721.6161, y: -738.04944}
-  m_SizeDelta: {x: 2786.955, y: 743.749}
+  m_AnchoredPosition: {x: 721.6161, y: -714.2526}
+  m_SizeDelta: {x: 2786.955, y: 648.562}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &712374969
 MonoBehaviour:
@@ -520,7 +515,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 35edf9dc94a8e7e4097fe7ebb16caec4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 33f75e58e5e5a5049b34cdf7d0174792, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -657,7 +652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4028004603161818901, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_Name
-      value: Button (1)
+      value: Next Button
       objectReference: {fileID: 0}
     - target: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_Pivot.x
@@ -693,7 +688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 888.307
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -729,7 +724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -750
+      value: -700
       objectReference: {fileID: 0}
     - target: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -835,11 +830,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041165413655870640, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -6.172
+      value: 0.000087738
       objectReference: {fileID: 0}
     - target: {fileID: 9041165413655870640, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1133
+      value: 1049
       objectReference: {fileID: 0}
     - target: {fileID: 9041165413655870640, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -871,7 +866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041165413655870643, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
       propertyPath: m_Name
-      value: Text
+      value: Title
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
@@ -897,7 +892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4028004603161818901, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_Name
-      value: Button (2)
+      value: Return Button
       objectReference: {fileID: 0}
     - target: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_Pivot.x
@@ -933,7 +928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 888.307
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -969,7 +964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1000
+      value: -900
       objectReference: {fileID: 0}
     - target: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -990,6 +985,45 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
   m_PrefabInstance: {fileID: 1178412738}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1204864306 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9041165413655870641, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
+  m_PrefabInstance: {fileID: 350987221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1255388215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4028004603161818901, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
+  m_PrefabInstance: {fileID: 1178412738}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1255388220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255388215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a709461faf371948871a326ef268d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1384460431 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2531251938867969121, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
+  m_PrefabInstance: {fileID: 862779112}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1674119184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,6 +1035,7 @@ GameObject:
   - component: {fileID: 1674119187}
   - component: {fileID: 1674119186}
   - component: {fileID: 1674119185}
+  - component: {fileID: 1674119188}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1075,6 +1110,157 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1674119188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674119184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f3a2ac8a3b64cf4b8f358bdebf3a832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialData:
+  - text: To convert binary to decimal, you need to start from the rightmost digit
+      of the binary number and multiply it by 2 to the power of 0, which is 1. Then,
+      you move to the left and for each digit, you multiply it by 2 to the power
+      of its position, where the rightmost position is 0, the next one is 1, and
+      so on. You add up all the resulting products to get the decimal equivalent
+      of the binary number.  For example, to convert the binary number 1101 to decimal,
+      you would start from the rightmost digit which is 1 and multiply it by 2^0,
+      which is 1, so you get 1 x 1 = 1. Then, you move to the left and the next digit
+      is 0, so you don't add anything to the sum. The next digit is 1, so you multiply
+      it by 2^2, which is 4, so you get 1 x 4 = 4. Finally, the leftmost digit is
+      1, so you multiply it by 2^3, which is 8, so you get 1 x 8 = 8.  You add up
+      all the resulting products, which are 1 + 0 + 4 + 8, and you get 13, so the
+      decimal equivalent of the binary number 1101 is 13.
+    image: {fileID: 21300000, guid: 35edf9dc94a8e7e4097fe7ebb16caec4, type: 3}
+  - text: To convert a decimal number to binary, you can use a process of repeated
+      division by two. Start with the decimal number and divide it by two. Record
+      the quotient and the remainder. Divide the quotient by two and record the quotient
+      and remainder again. Repeat this process until the quotient becomes zero. The
+      binary equivalent of the decimal number is the sequence of remainders read
+      in reverse order.  For example, to convert the decimal number 13 to binary,
+      divide 13 by 2. The quotient is 6 and the remainder is 1. Next, divide 6 by
+      2. The quotient is 3 and the remainder is 0. Divide 3 by 2. The quotient is
+      1 and the remainder is 1. Divide 1 by 2. The quotient is 0 and the remainder
+      is 1. Reading the remainders in reverse order, the binary equivalent of the
+      decimal number 13 is 1101. Therefore, 13 in binary is 1101.
+    image: {fileID: 21300000, guid: 33f75e58e5e5a5049b34cdf7d0174792, type: 3}
+  - text: 'To convert an octal number to decimal, you need to multiply each digit
+      of the octal number by the corresponding power of 8 and then add the products. 
+      For example, to convert the octal number 753 to decimal, you would start by
+      identifying the place value of each digit in the octal number, starting from
+      the rightmost digit. The rightmost digit has a place value of 1, the digit
+      to its left has a place value of 8, the next digit to the left has a place
+      value of 64, and so on.  Next, you would multiply each digit by its corresponding
+      place value. For the digit 3, the product is 3 x 1 = 3. For the digit 5, the
+      product is 5 x 8 = 40. For the digit 7, the product is 7 x 64 = 448.  Finally,
+      you would add the products to get the decimal equivalent: 3 + 40 + 448 = 491.
+      Therefore, the octal number 753 is equivalent to the decimal number 491.'
+    image: {fileID: 21300000, guid: 5e9888fd70af46140ad84cef63e615b4, type: 3}
+  - text: To convert a decimal number to an octal number, you need to divide the
+      decimal number by 8 and write down the quotient and remainder. Then, you divide
+      the quotient by 8 again and write down the new quotient and remainder. You
+      repeat this process until the quotient is zero. Finally, you write down the
+      remainders in reverse order to get the octal number.  Let's take an example
+      of converting the decimal number 123 to an octal number. First, we divide 123
+      by 8, which gives us a quotient of 15 and a remainder of 3. We write down the
+      quotient and remainder as (15, 3). Next, we divide the quotient 15 by 8 again,
+      which gives us a quotient of 1 and a remainder of 7. We write down the new
+      quotient and remainder as (1, 7). Then, we divide the quotient 1 by 8, which
+      gives us a quotient of 0 and a remainder of 1. We write down the remainder
+      as (0, 1).  Now, we have the remainders in reverse order, which are 173. Therefore,
+      the decimal number 123 is equivalent to the octal number 173.
+    image: {fileID: 21300000, guid: 9a901f9870cb8c744b01647586ab82da, type: 3}
+  - text: To convert a hexadecimal number to decimal, you need to start from the
+      rightmost digit of the hexadecimal number and multiply it by 16 to the power
+      of 0, which is 1. Then, you move to the left and for each digit, you multiply
+      it by 16 to the power of its position, where the rightmost position is 0, the
+      next one is 1, and so on. You add up all the resulting products to get the
+      decimal equivalent of the hexadecimal number.  For example, to convert the
+      hexadecimal number 7AF to decimal, you would start from the rightmost digit
+      which is F and multiply it by 16^0, which is 1, so you get F x 1 = 15. Then,
+      you move to the left and the next digit is A, so you multiply it by 16^1, which
+      is 16, so you get A x 16 = 160. Finally, the leftmost digit is 7, so you multiply
+      it by 16^2, which is 256, so you get 7 x 256 = 1792.  You add up all the resulting
+      products, which are 15 + 160 + 1792, and you get 1967, so the decimal equivalent
+      of the hexadecimal number 7AF is 1967.
+    image: {fileID: 21300000, guid: 754e091265add864d88877846f5f296d, type: 3}
+  - text: To convert a decimal number to hexadecimal, you need to divide the decimal
+      number by 16 and keep track of the remainders. You start by dividing the decimal
+      number by 16 and writing down the remainder. If the quotient is greater than
+      or equal to 16, you divide the quotient by 16 and write down the remainder.
+      You repeat this process until the quotient is less than 16. Then, you convert
+      each remainder to its corresponding hexadecimal digit.  For example, to convert
+      the decimal number 456 to hexadecimal, you would start by dividing 456 by 16.
+      The quotient is 28 and the remainder is 8, so you write down 8. Then, you divide
+      28 by 16. The quotient is 1 and the remainder is 12, which corresponds to the
+      hexadecimal digit C. Finally, the quotient is 1 and the remainder is 1, so
+      you write down 1.  The remainders in reverse order are 1, C, 8, so the hexadecimal
+      equivalent of the decimal number 456 is 0x1C8.
+    image: {fileID: 21300000, guid: 137d1063181faa5479950ea3cd3cc035, type: 3}
+  - text: 'Converting binary to hexadecimal involves grouping the binary digits into
+      sets of four, starting from the rightmost digit. If there are not enough digits
+      to make a complete group of four, then you can add zeros to the left until
+      there are four digits. Each group of four binary digits corresponds to a single
+      hexadecimal digit.  Once you have grouped the binary digits, you can convert
+      each group to its corresponding hexadecimal digit. To do this, you can use
+      the chart below.  For example, suppose you want to convert the binary number
+      10111011 to hexadecimal. Starting from the rightmost digit, you group the binary
+      digits into sets of four: 1 0111 0110. Since the leftmost group only has one
+      digit, you add zeros to the left: 0001 0111 0110.  Next, you convert each group
+      to its corresponding hexadecimal digit using the chart. The leftmost group,
+      0001, corresponds to the hexadecimal digit 1. The middle group, 0111, corresponds
+      to the hexadecimal digit 7. The rightmost group, 0110, corresponds to the hexadecimal
+      digit 6.  Therefore, the hexadecimal equivalent of the binary number 10111011
+      is 0x176.'
+    image: {fileID: 21300000, guid: 3e545a4026d615348b9faafbad3bef3d, type: 3}
+  - text: To convert a hexadecimal number to binary, you need to convert each hexadecimal
+      digit to its corresponding binary representation.  First, you need to memorize
+      the hexadecimal to binary conversion chart or use a reference. Each hexadecimal
+      digit corresponds to a 4-bit binary sequence. For example, 0 in hexadecimal
+      corresponds to 0000 in binary, 1 in hexadecimal corresponds to 0001 in binary,
+      2 in hexadecimal corresponds to 0010 in binary, and so on.  To convert a hexadecimal
+      number to binary, you need to convert each hexadecimal digit to its corresponding
+      binary sequence and combine them. For example, to convert the hexadecimal number
+      2F to binary, you would first convert 2 to 0010 and F to 1111. Then, you would
+      combine them to get 00101111 in binary.  If the hexadecimal number has a leading
+      zero, you can ignore it and convert the remaining digits to binary. For example,
+      the hexadecimal number 0B2 can be converted to binary by converting B to 1011
+      and 2 to 0010, and then combining them to get 10110010.  In summary, to convert
+      a hexadecimal number to binary, you need to convert each hexadecimal digit
+      to its corresponding 4-bit binary sequence and combine them to get the final
+      binary representation.
+    image: {fileID: 21300000, guid: 3e545a4026d615348b9faafbad3bef3d, type: 3}
+  - text: 'To convert a binary number to octal, you can group the binary digits into
+      sets of three, starting from the rightmost digit. If the leftmost set of digits
+      has fewer than three digits, you can add leading zeros to make it a complete
+      set. Then, you can convert each set of three binary digits to its corresponding
+      octal digit.  Here''s an example: let''s say you want to convert the binary
+      number 11010110 to octal. You can group the binary digits into sets of three
+      as 011 010 110. Then, you can convert each set of three binary digits to its
+      corresponding octal digit, which gives you the octal number 326. Therefore,
+      the octal equivalent of the binary number 11010110 is 326.'
+    image: {fileID: 21300000, guid: badb442208614224fa604cbbb35d0ee1, type: 3}
+  - text: To convert an octal number to binary, you need to first convert each octal
+      digit to its corresponding 3-digit binary number. You can do this by writing
+      down the binary equivalent of each octal digit.  For example, to convert the
+      octal number 17 to binary, you would first convert the octal digit 1 to its
+      corresponding binary number, which is 001. Then, you would convert the octal
+      digit 7 to its corresponding binary number, which is 111.  Next, you would
+      combine the binary digits to get the binary equivalent of the octal number.
+      For this example, you would combine the binary numbers 001 and 111 to get 001111. 
+      Finally, you can simplify the binary number by removing any leading zeros.
+      In this case, the binary number is already in its simplest form, so the binary
+      equivalent of the octal number 17 is 001111.
+    image: {fileID: 21300000, guid: badb442208614224fa604cbbb35d0ee1, type: 3}
+  nextButton: {fileID: 1384460431}
+  previousButton: {fileID: 1893879499}
+  tutorialText: {fileID: 1204864306}
+  tutorialImage: {fileID: 712374969}
 --- !u!1 &1830299961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,8 +1302,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0030517578, y: 0}
-  m_SizeDelta: {x: 2879.2, y: 1620}
+  m_AnchoredPosition: {x: 0.0030517578, y: -19.274}
+  m_SizeDelta: {x: 2879.2002, y: 1523.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1830299963
 MonoBehaviour:
@@ -1225,3 +1411,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1893879499 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2531251938867969121, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
+  m_PrefabInstance: {fileID: 586534421}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
