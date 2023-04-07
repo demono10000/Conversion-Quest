@@ -299,15 +299,14 @@ PrefabInstance:
         zero. The binary equivalent of the decimal number is the sequence of remainders
         read in reverse order.
 
-        
 
-        For example, to convert the decimal
-        number 13 to binary, divide 13 by 2. The quotient is 6 and the remainder
-        is 1. Next, divide 6 by 2. The quotient is 3 and the remainder is 0. Divide
-        3 by 2. The quotient is 1 and the remainder is 1. Divide 1 by 2. The quotient
-        is 0 and the remainder is 1. Reading the remainders in reverse order, the
-        binary equivalent of the decimal number 13 is 1101. Therefore, 13 in binary
-        is 1101.'
+
+        For example, to convert the decimal number
+        13 to binary, divide 13 by 2. The quotient is 6 and the remainder is 1. Next,
+        divide 6 by 2. The quotient is 3 and the remainder is 0. Divide 3 by 2. The
+        quotient is 1 and the remainder is 1. Divide 1 by 2. The quotient is 0 and
+        the remainder is 1. Reading the remainders in reverse order, the binary equivalent
+        of the decimal number 13 is 1101. Therefore, 13 in binary is 1101.'
       objectReference: {fileID: 0}
     - target: {fileID: 9041165413655870641, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
       propertyPath: m_fontSize
@@ -995,6 +994,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1255388215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4028004603161818901, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
+  m_PrefabInstance: {fileID: 1178412738}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1255388220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255388215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a709461faf371948871a326ef268d15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1384460431 stripped
