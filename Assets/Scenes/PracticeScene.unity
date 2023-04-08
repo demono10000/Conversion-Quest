@@ -803,7 +803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4028004603161818901, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_Name
-      value: Button (1)
+      value: From Octal Button
       objectReference: {fileID: 0}
     - target: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_Pivot.x
@@ -1026,6 +1026,7 @@ GameObject:
   - component: {fileID: 607106421}
   - component: {fileID: 607106420}
   - component: {fileID: 607106419}
+  - component: {fileID: 607106422}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1100,6 +1101,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &607106422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607106418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75d08eda01e7f3e468232f352562f5a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fromBinary: {fileID: 0}
+  fromOctal: {fileID: 0}
+  fromDecimal: {fileID: 0}
+  fromHexadecimal: {fileID: 0}
+  toBinary: {fileID: 0}
+  toOctal: {fileID: 0}
+  toDecimal: {fileID: 0}
+  toHexadecimal: {fileID: 0}
+  outputText: {fileID: 0}
+  inputFields: []
 --- !u!1001 &664364456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1197,7 +1220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041165413655870643, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
       propertyPath: m_Name
-      value: Text (TMP)
+      value: From Text
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce8b263d35ba4ef46ab5994eae6342d0, type: 3}
@@ -1427,7 +1450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4028004603161818901, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_Name
-      value: Button (2)
+      value: From Decimal Button
       objectReference: {fileID: 0}
     - target: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_Pivot.x
@@ -2491,7 +2514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4028004603161818901, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_Name
-      value: Button
+      value: From Binary Button
       objectReference: {fileID: 0}
     - target: {fileID: 4804320822187543953, guid: 4901ca4d48cd9314f843877a1c32083d, type: 3}
       propertyPath: m_Pivot.x
