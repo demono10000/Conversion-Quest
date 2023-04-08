@@ -13,7 +13,7 @@ public class PracticeScript : MonoBehaviour
 
     private int _digitsSum;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         foreach (var button in fromButtons)
         {
@@ -29,10 +29,10 @@ public class PracticeScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         // check if digits sum changed
-        int sum = 0;
+        var sum = 0;
         foreach (var inputField in inputFields)
         {
             sum += inputField.GetNumber();
