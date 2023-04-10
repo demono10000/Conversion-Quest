@@ -20,6 +20,7 @@ public class GameplayScript : MonoBehaviour
     public List<GameObject> modes = new List<GameObject>();
     public List<Button> quizModeButtons = new List<Button>();
     public List<NumberScript> openModeButtons = new List<NumberScript>();
+    public List<NumberButtonScript> whatIsCorrectButtons = new List<NumberButtonScript>();
     private string _correctAnswer;
     private string _answer;
     private int _timeStart;
@@ -154,8 +155,23 @@ public class GameplayScript : MonoBehaviour
                     {
                         openModeButtons[i].GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
                     }
+                    openModeButtons[i].SwitchButtons(false);
+                    confirmButton.interactable = false;
                 }
-                
+                break;
+            case (int) Mode.WhatIsCorrect:
+                bool isCorrect = true;
+                foreach (var button in whatIsCorrectButtons)
+                {
+                    button.SwitchButtons(false);
+                    if (!button.IsCorrect())
+                    {
+                        isCorrect = false;
+                        button.SetColor(Color.black);
+                    }
+                }
+                if (isCorrect) _answer = _correctAnswer;
+                confirmButton.interactable = false;
                 break;
         }
         if (_answer == _correctAnswer) _correctAnswers++;
@@ -192,7 +208,12 @@ public class GameplayScript : MonoBehaviour
                 {
                     button.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
                     button.ResetNumber();
+                    button.SwitchButtons(true);
+                    confirmButton.interactable = true;
                 }
+                break;
+            case (int) Mode.WhatIsCorrect:
+                GenerateWhatIsCorrectAnswers(number);
                 break;
         }
     }
@@ -221,5 +242,24 @@ public class GameplayScript : MonoBehaviour
         {
             quizModeButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = shuffledAnswers[i];
         }
+    }
+
+    private void GenerateWhatIsCorrectAnswers(int number)
+    {
+        _correctAnswer = ConvertNumber(number, _toSystem);
+        var answer = _correctAnswer;
+        while (answer.Length < whatIsCorrectButtons.Count)
+        {
+            answer = "0" + answer;
+        }
+
+        foreach (var button in whatIsCorrectButtons)
+        {
+            bool correct = Random.value > 0.5f;
+            button.SetState(true);
+            button.SetValue(answer[whatIsCorrectButtons.IndexOf(button)].ToString(), correct, _toSystem);
+            button.SwitchButtons(true);
+        }
+        confirmButton.interactable = true;
     }
 }

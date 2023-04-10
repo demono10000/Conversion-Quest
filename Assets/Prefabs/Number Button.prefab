@@ -75,8 +75,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255360
-  m_fontColor: {r: 0, g: 1, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 4238444833871773354}
   - component: {fileID: 4238444833871773355}
   - component: {fileID: 4238444833871773356}
+  - component: {fileID: 4532422870612416263}
   m_Layer: 5
   m_Name: Number Button
   m_TagString: Untagged
@@ -257,3 +258,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4532422870612416263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4238444833871773358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ddf8e9161833a48a3f2cb3d5cde2ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,13 +11,15 @@ public class NumberScript : MonoBehaviour
     private Button _downButton;
     private TextMeshProUGUI _numberText;
 
-    private void Start()
+    public void Awake()
     {
-        // find children buttons down and up
         _upButton = transform.Find("Up").GetComponent<Button>();
         _downButton = transform.Find("Down").GetComponent<Button>();
-        // find child text
         _numberText = transform.Find("Text").GetComponent<TextMeshProUGUI>();
+    }
+
+    private void Start()
+    {
         _upButton.onClick.AddListener(AddNumber);
         _downButton.onClick.AddListener(SubtractNumber);
         _number = 0;
@@ -45,5 +48,10 @@ public class NumberScript : MonoBehaviour
         if(_numberText == null) return;
         _number = 0;
         _numberText.text = _number.ToString("X");
+    }
+    public void SwitchButtons(bool state)
+    {
+        _upButton.interactable = state;
+        _downButton.interactable = state;
     }
 }
