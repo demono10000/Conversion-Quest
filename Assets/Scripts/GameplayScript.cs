@@ -19,6 +19,7 @@ public class GameplayScript : MonoBehaviour
     public Button confirmButton;
     public List<GameObject> modes = new List<GameObject>();
     public List<Button> quizModeButtons = new List<Button>();
+    public List<NumberScript> openModeButtons = new List<NumberScript>();
     private string _correctAnswer;
     private string _answer;
     private int _timeStart;
@@ -36,6 +37,15 @@ public class GameplayScript : MonoBehaviour
         {
             var i = quizModeButtons.IndexOf(button);
             button.onClick.AddListener(() => QuizAnswer(i));
+        }
+        foreach (var button in openModeButtons)
+        {
+            int maxNumber = 0;
+            if (_toSystem == 0)  maxNumber = 1;
+            else if (_toSystem == 1) maxNumber = 7;
+            else if (_toSystem == 2) maxNumber = 9;
+            else if (_toSystem == 3) maxNumber = 15;
+            button.SetMaxNumber(maxNumber);
         }
         confirmButton.onClick.AddListener(() => ConfirmAnswer());
         _timeStart = (int)Time.time;
@@ -74,18 +84,20 @@ public class GameplayScript : MonoBehaviour
             _ => throw new ArgumentOutOfRangeException(nameof(system), system, null)
         };
     }
+    private static string ConvertNumber(uint number, int system)
+    {
+        return system switch
+        {
+            (int) NumberSystem.Binary => Convert.ToString(number, 2),
+            (int) NumberSystem.Octal => Convert.ToString(number, 8),
+            (int) NumberSystem.Decimal => Convert.ToString(number, 10),
+            (int) NumberSystem.Hexadecimal => Convert.ToString(number, 16),
+            _ => throw new ArgumentOutOfRangeException(nameof(system), system, null)
+        };
+    }
 
     private void ConfirmAnswer()
     {
-        if (_answer == _correctAnswer)
-        {
-            Debug.Log("Correct");
-            _correctAnswers++;
-        }
-        else
-        {
-            Debug.Log("Wrong");
-        }
         switch (_mode)
         {
             case (int) Mode.Quiz:
@@ -105,7 +117,48 @@ public class GameplayScript : MonoBehaviour
                     confirmButton.interactable = false;
                 }
                 break;
+            case (int) Mode.Open:
+                uint inputNumber = 0;
+                int[] digits = new int[openModeButtons.Count];
+                for (var i = 0; i < openModeButtons.Count; i++)
+                {
+                    digits[i] = openModeButtons[i].GetNumber();
+                }
+                var power = 0;
+                if (_toSystem == 0)  power = 2;
+                else if (_toSystem == 1) power = 8;
+                else if (_toSystem == 2) power = 10;
+                else if (_toSystem == 3) power = 16;
+                for (var i = 0; i < digits.Length; i++)
+                {
+                    inputNumber += (uint)(digits[i] * (int)Mathf.Pow(power, digits.Length - i - 1));
+                }
+                _answer = ConvertNumber(inputNumber, _toSystem);
+                var answer = _answer;
+                while (answer.Length < 8)
+                {
+                    answer = "0" + answer;
+                }
+                var correctAnswer = _correctAnswer;
+                while (correctAnswer.Length < 8)
+                {
+                    correctAnswer = "0" + correctAnswer;
+                }
+                for (var i = 0; i < answer.Length; i++)
+                {
+                    if (answer[i] == correctAnswer[i])
+                    {
+                        openModeButtons[i].GetComponentInChildren<TextMeshProUGUI>().color = Color.green;
+                    }
+                    else
+                    {
+                        openModeButtons[i].GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
+                    }
+                }
+                
+                break;
         }
+        if (_answer == _correctAnswer) _correctAnswers++;
         
         StartCoroutine(WaitAndGenerateAnswers());
     }
@@ -132,6 +185,14 @@ public class GameplayScript : MonoBehaviour
         {
             case (int) Mode.Quiz:
                 GenerateQuizAnswers(number);
+                break;
+            case (int) Mode.Open:
+                _correctAnswer = ConvertNumber(number, _toSystem);
+                foreach (var button in openModeButtons)
+                {
+                    button.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
+                    button.ResetNumber();
+                }
                 break;
         }
     }
