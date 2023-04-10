@@ -21,6 +21,8 @@ public class GameplayScript : MonoBehaviour
     public List<Button> quizModeButtons = new List<Button>();
     public List<NumberScript> openModeButtons = new List<NumberScript>();
     public List<NumberButtonScript> whatIsCorrectButtons = new List<NumberButtonScript>();
+    public List<Button> binaryModeButtons = new List<Button>();
+    public TextMeshProUGUI binaryModeText;
     private string _correctAnswer;
     private string _answer;
     private int _timeStart;
@@ -52,6 +54,8 @@ public class GameplayScript : MonoBehaviour
         _timeStart = (int)Time.time;
         _level = 1;
         _correctAnswers = 0;
+        binaryModeButtons[0].onClick.AddListener(() => BinaryAnswer("True"));
+        binaryModeButtons[1].onClick.AddListener(() => BinaryAnswer("False"));
         GenerateAnswers();
     }
 
@@ -72,6 +76,14 @@ public class GameplayScript : MonoBehaviour
             button.interactable = true;
         }
         quizModeButtons[i].interactable = false;
+        confirmButton.interactable = true;
+    }
+
+    private void BinaryAnswer(string answer)
+    {
+        _answer = answer;
+        binaryModeButtons[0].interactable = answer != "True";
+        binaryModeButtons[1].interactable = answer != "False";
         confirmButton.interactable = true;
     }
     private static string ConvertNumber(int number, int system)
@@ -173,6 +185,21 @@ public class GameplayScript : MonoBehaviour
                 if (isCorrect) _answer = _correctAnswer;
                 confirmButton.interactable = false;
                 break;
+            case (int) Mode.Binary:
+                if (_answer == _correctAnswer)
+                {
+                    binaryModeButtons[0].GetComponentInChildren<TextMeshProUGUI>().color = Color.green;
+                    binaryModeButtons[1].GetComponentInChildren<TextMeshProUGUI>().color = Color.green;
+                }
+                else
+                {
+                    binaryModeButtons[0].GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
+                    binaryModeButtons[1].GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
+                }
+                binaryModeButtons[0].interactable = false;
+                binaryModeButtons[1].interactable = false;
+                confirmButton.interactable = false;
+                break;
         }
         if (_answer == _correctAnswer) _correctAnswers++;
         
@@ -214,6 +241,9 @@ public class GameplayScript : MonoBehaviour
                 break;
             case (int) Mode.WhatIsCorrect:
                 GenerateWhatIsCorrectAnswers(number);
+                break;
+            case (int) Mode.Binary:
+                GenerateBinaryAnswers(number);
                 break;
         }
     }
@@ -261,5 +291,32 @@ public class GameplayScript : MonoBehaviour
             button.SwitchButtons(true);
         }
         confirmButton.interactable = true;
+    }
+
+    private void GenerateBinaryAnswers(int number)
+    {
+        confirmButton.interactable = true;
+        foreach (var button in binaryModeButtons)
+        {
+            button.interactable = true;
+            button.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
+        }
+        bool correct = Random.value > 0.5f;
+        if (correct)
+        {
+            binaryModeText.text = ConvertNumber(number, _toSystem);
+            _correctAnswer = "True";
+        }
+        else
+        {
+            int random = number;
+            while (random == number)
+            {
+                random = Random.Range(0, 256);
+            }
+            binaryModeText.text = ConvertNumber(random, _toSystem);
+            _correctAnswer = "False";
+        }
+        
     }
 }
