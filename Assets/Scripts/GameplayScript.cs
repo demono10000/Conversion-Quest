@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class GameplayScript : MonoBehaviour
 {
@@ -105,19 +106,22 @@ public class GameplayScript : MonoBehaviour
                 }
                 break;
         }
-        if (++_level > Levels)
-        {
-            Debug.Log("Game Over");
-            Debug.Log($"Correct answers: {_correctAnswers}");
-            Debug.Log($"Time: {timerText.text}");
-            return;
-        }
+        
         StartCoroutine(WaitAndGenerateAnswers());
     }
     private IEnumerator WaitAndGenerateAnswers()
     {
         yield return new WaitForSeconds(1);
-        GenerateAnswers();
+        if (++_level > Levels)
+        {
+            Debug.Log("Game Over");
+            Debug.Log($"Correct answers: {_correctAnswers}");
+            Debug.Log($"Time: {timerText.text}");
+            PlayerPrefs.SetString("Score", $"{_correctAnswers}/{Levels}");
+            PlayerPrefs.SetFloat("Time", Time.time - _timeStart);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("ScoreScene");
+        }else GenerateAnswers();
     }
     private void GenerateAnswers()
     {

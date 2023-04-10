@@ -42,7 +42,11 @@ public class ModesScript : MonoBehaviour
             var i = modeButtons.IndexOf(button);
             button.onClick.AddListener(() => SelectMode(i));
         }
-        playButton.onClick.AddListener(() => SceneManager.LoadScene("GameplayScene"));
+        playButton.onClick.AddListener(() =>
+        {
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("GameplayScene");
+        });
         SelectFromSystem((int)NumberSystem.Binary);
         SelectToSystem((int)NumberSystem.Decimal);
         SelectMode((int)Mode.Quiz);
