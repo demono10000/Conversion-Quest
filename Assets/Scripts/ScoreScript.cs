@@ -1,3 +1,5 @@
+using System.Data;
+using Mono.Data.SqliteClient;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,5 +38,21 @@ public class ScoreScript : MonoBehaviour
 
     private void SaveToDatabase(int score, float time, string mode)
     {
+        Debug.Log($"Saving score: {score}, time: {time}, mode: {mode}");
+        string dbName = "Database";
+        // create database in folder Assets/Databases
+        string dbLocation = $"URI=file:{Application.dataPath}/Databases/{dbName}.db";
+        IDbConnection db = new SqliteConnection(dbLocation);
+        db.Open();
+        IDbCommand dbcmd = db.CreateCommand();
+        string sqlQuery = "CREATE TABLE IF NOT EXISTS Scores (id INTEGER PRIMARY KEY AUTOINCREMENT, score INTEGER, time FLOAT, mode TEXT)";
+        dbcmd.CommandText = sqlQuery;
+        dbcmd.ExecuteNonQuery();
+        sqlQuery = $"INSERT INTO Scores (score, time, mode) VALUES ({score}, '{time}', '{mode}')";
+        dbcmd.CommandText = sqlQuery;
+        dbcmd.ExecuteNonQuery();
+        dbcmd.Dispose();
+        db.Close();
+        Debug.Log("Score saved");
     }
 }
