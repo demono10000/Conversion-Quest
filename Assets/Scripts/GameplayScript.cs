@@ -210,9 +210,6 @@ public class GameplayScript : MonoBehaviour
         yield return new WaitForSeconds(1);
         if (++_level > Levels)
         {
-            Debug.Log("Game Over");
-            Debug.Log($"Correct answers: {_correctAnswers}");
-            Debug.Log($"Time: {timerText.text}");
             PlayerPrefs.SetString("Score", $"{_correctAnswers}/{Levels}");
             PlayerPrefs.SetFloat("Time", Time.time - _timeStart);
             PlayerPrefs.Save();

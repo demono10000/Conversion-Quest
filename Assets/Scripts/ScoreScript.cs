@@ -23,5 +23,18 @@ public class ScoreScript : MonoBehaviour
             .Replace("{1}", wrongAnswers.ToString())
             .Replace("{2}", timeString);
         text.text = textTemplate;
+        string mode = (PlayerPrefs.GetInt("Mode")) switch
+        {
+            0 => "Quiz",
+            1 => "Open",
+            2 => "What is correct?",
+            3 => "Binary",
+            _ => "Unknown"
+        };
+        SaveToDatabase(correctAnswers, time, mode);
+    }
+
+    private void SaveToDatabase(int score, float time, string mode)
+    {
     }
 }
