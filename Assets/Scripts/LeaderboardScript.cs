@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using Mono.Data.SqliteClient;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +18,11 @@ public class LeaderboardScript : MonoBehaviour
     private void Start()
     {
         _dbName = "Database";
+        string directoryPath = $"{Application.dataPath}/Databases";
+        if (!Directory.Exists(directoryPath))
+        {
+            Directory.CreateDirectory(directoryPath);
+        }
         _dbLocation = $"URI=file:{Application.dataPath}/Databases/{_dbName}.db";
         _selectedMode = PlayerPrefs.GetInt("Mode");
         foreach (var button in modeButtons)

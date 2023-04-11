@@ -1,4 +1,5 @@
 using System.Data;
+using System.IO;
 using Mono.Data.SqliteClient;
 using TMPro;
 using UnityEngine;
@@ -45,6 +46,11 @@ public class ScoreScript : MonoBehaviour
         leaderboardButton.interactable = false;
         returnButton.interactable = false;
         string dbName = "Database";
+        string directoryPath = $"{Application.dataPath}/Databases";
+        if (!Directory.Exists(directoryPath))
+        {
+            Directory.CreateDirectory(directoryPath);
+        }
         string dbLocation = $"URI=file:{Application.dataPath}/Databases/{dbName}.db";
         IDbConnection db = new SqliteConnection(dbLocation);
         db.Open();
