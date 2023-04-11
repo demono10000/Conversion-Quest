@@ -2,15 +2,19 @@ using System.Data;
 using Mono.Data.SqliteClient;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
     public TextMeshProUGUI text;
     public Button leaderboardButton;
+    public Button returnButton;
+    public TextMeshProUGUI savingText;
 
     private void Start()
     {
+        leaderboardButton.onClick.AddListener(() => { SceneManager.LoadScene("LeaderboardScene"); });
         var score = PlayerPrefs.GetString("Score");
         var correctAnswers = int.Parse(score.Split("/")[0]);
         var wrongAnswers = int.Parse(score.Split("/")[1]) - correctAnswers;
@@ -38,9 +42,9 @@ public class ScoreScript : MonoBehaviour
 
     private void SaveToDatabase(int score, float time, string mode)
     {
-        Debug.Log($"Saving score: {score}, time: {time}, mode: {mode}");
+        leaderboardButton.interactable = false;
+        returnButton.interactable = false;
         string dbName = "Database";
-        // create database in folder Assets/Databases
         string dbLocation = $"URI=file:{Application.dataPath}/Databases/{dbName}.db";
         IDbConnection db = new SqliteConnection(dbLocation);
         db.Open();
@@ -53,6 +57,8 @@ public class ScoreScript : MonoBehaviour
         dbcmd.ExecuteNonQuery();
         dbcmd.Dispose();
         db.Close();
-        Debug.Log("Score saved");
+        savingText.text = "Score saved";
+        leaderboardButton.interactable = true;
+        returnButton.interactable = true;
     }
 }
